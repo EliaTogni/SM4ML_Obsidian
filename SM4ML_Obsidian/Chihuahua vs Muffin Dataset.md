@@ -131,7 +131,7 @@ It is possible to distinguish different techniques for augmenting data:
 5) **random erasing**: this technique was specifically designed to prevent overfitting by altering the input space and, consequently, to combat image recognition challenges due to occlusion. By removing certain input patches, the model is forced to find other descriptive characteristics;
 6) **mixing images**: blending and mixing multiple images by averaging their pixel values.
 
-The augmentations I chose to perform are described in the following sections.
+For this purpose I created new images by applying some augmentations over a randomly extracted set of images ($25\%$ of the dataset). The augmentations I chose to perform are described in the following sections.
 
 Considering the safety of data augmentation is fundamental in ensuring the integrity and reliability of machine learning models. In fact, certain transformations might generate unrealistic or misleading data points, leading to erroneous model predictions.
 
@@ -143,15 +143,21 @@ In terms of safety of the geometric transformations, I evaluated all of the chos
 #### Flipping
 This geometric transformation consists in flipping the horizonal axis.
 
+immagine esempio
+
 ------------------------------------------------------------------------
 
 #### Mirroring
 This geometric transformation consists in flipping the vertical axis.
 
+immagine esempio
+
 ------------------------------------------------------------------------
 
 #### Rotation
 Rotation augmentations are done by rotating the image right or left on an axis of a random degree.
+
+immagine esempio
 
 ------------------------------------------------------------------------
 
@@ -165,15 +171,21 @@ In effect, color space transformations will eliminate color biases present in th
 #### Brightness
 This color space transformation consists in the decreasing or increasing of the pixel values by a constant value. For example, when decreasing the pixel values of an image to simulate a darker environment, it may become impossible to see the objects in the image.
 
+immagine esempio
+
 ------------------------------------------------------------------------
 
 #### Contrast
 This color space transformation involves modifying the distribution of pixel intensities within an image to increase or decrease the difference between light and dark areas.
 
+immagine esempio
+
 ------------------------------------------------------------------------
 
 #### Saturation
 This color space transformation involves adjusting the intensity or purity of colors within an image while keeping the brightness and contrast levels constant.
+
+immagine esempio
 
 ------------------------------------------------------------------------
 
@@ -183,25 +195,51 @@ Kernel filters are modifications that change the pixel values, resulting in the 
 #### Unsharp masking sharpening
 This kernel filter involves exploiting a method commonly known as **unsharp masking sharpening**: a Gaussian blur is applied to the dataset and  it is then subtracted from the original image, obtaining in this way an increment in terms of contrast for the smallest details. Sharpening images for Data Augmentation could result in encapsulating more details about objects of interest.
 
+immagine esempio
+
 ------------------------------------------------------------------------
 
 #### Blurring
 This kernel filter involves, as the name suggests, blurring the image and reducing noise, resulting in a smoothed version of the image. Intuitively, blurring images for Data Augmentation could lead to higher resistance to motion blur during testing. In my case, the blurring is obtained through a **box blur**, that is, by setting the value of each pixel to the average of the pixels in the radius of 3.
 
+immagine esempio
+
 ------------------------------------------------------------------------
 
-### Image Segmentation
-even if some filters, like spreading and blurring, simplify a picture giving almost only the main shape, in some cases this is not enough to exclude the features we know are completely irrelevant.
+### Image Segmentation 
+Even if some filters simplify a picture giving almost only the main shape, in some cases this is not enough to exclude the features we know are completely irrelevant. The problem in the recognition of the principal content of the image is given by the fact that an image could contain a lot of different details that increase the difficulty of the task of classification, thus, I decided to also apply **segmentation** to the datasets. Segmentation is the process of partitioning an image or video into meaningful regions to identify and differentiate objects or regions of interest. The goal is to classify each pixel or region of the image as belonging to one of two classes: foreground or background. ==In order to simplify the images, a K-Means clustering algorithm has been applied over each image: every pixel has been set to the value of the centroid of its cluster, with a total of 4 cluster per image. In this way, the images became very simple and only the principal shapes and colors survived.==
+
+immagine esempio segmentation
+
+The result of the data segmentation and augmentation has been eight datasets that I analyzed separately:
+- the original couple of datasets (used in the hyper parameter tuning);
+- the augmented couple of datasets;
+- the segmented couple of datasets;
+- the augmented and segmented couple of datasets.
+
+In the table below a brief summary of our generated datasets is provided.
+
+| Dataset                       | Number of Chihuahua | Number of Muffin | Total images |
+| ----------------------------- | ------------------- | ---------------- | ------------ |
+| RGB                           |                     |                  |              |
+| Greyscale                     |                     |                  |              |
+| RGB_Augmented                 |                     |                  |              |
+| Greyscale_Augmented           |                     |                  |              |
+| RGB_Segmented                 |                     |                  |              |
+| Greyscale_Segmented           |                     |                  |              |
+| RGB_Augmented_Segmented       |                     |                  |              |
+| Greyscale_Augmented_Segmented |                     |                  |              |
+
 
 ------------------------------------------------------------------------
 
 ## Image Normalization
-
+==Each image in the datasets is normalized to pixel values between 0 and 1. Normalization is useful to have comparable values in every layer of a neural network. Since the output of our CNNs will be between 0 and 1 (because we are dealing with a classification task), normalizing the input will make learning easier.==
 
 ------------------------------------------------------------------------
 
 ## Dataset Shuffling
-motivazione dataset shuffling report kidara
+==A shuffle operation is performed before splitting, in order to get rid of possible patterns or biases in the data gathering process. Clearly, if the data are not representative of the whole population, shuffling the dataset will not fix this problem. However, for instance, if the data are collected using some pattern (e.g. taking pictures of people from town to town), then this shuffle operation will get rid of the intrinsic pattern of how the data have been collected or generated.==
 
 ------------------------------------------------------------------------
 

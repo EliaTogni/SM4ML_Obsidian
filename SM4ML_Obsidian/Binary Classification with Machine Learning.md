@@ -84,20 +84,28 @@ I declare that this material, which I now submit for assessment, is entirely my 
 - [x] Scelta augmentation  ✅ 2024-04-26
 - [x] Chiedere a chat gpt quanti tipi di augmentation ci sono ✅ 2024-04-26
 - [x] Chiedere a chatgpt di classificare le varie augmentation ✅ 2024-04-26
-- [ ] leggere paper segmentation (7)
+- [ ] leggere paper segmentation (2)
 - [x] Aggiornare report con modifiche finora ✅ 2024-04-26
-- [ ] Check codice max augmentation 
-- [ ] Check paper rita augmentation (5)
+- [ ] Check codice max augmentation (7)
+- [x] Check paper rita augmentation ✅ 2024-04-30
 - [x] fixare parentesi muffin image removal ✅ 2024-04-27
 - [x] chagpt global quantities frasca ✅ 2024-04-28
-- [ ] Scelta tipi augmentation (8/10 tipi 25%) rotation, scaling, mirroring, contrast, brightness, blurring, unsharpening, ... (3)
+- [x] Scelta tipi augmentation (8/10 tipi 25%) rotation, scaling, mirroring, contrast, brightness, blurring, unsharpening, ... ✅ 2024-04-30
 - [x] Finire sistemare fino a data augmentation ✅ 2024-04-30
 - [x] Rifrasare parte finale image resizing ✅ 2024-04-30
 - [x] aggiungere simbolo gradi rotation geometric transformation ✅ 2024-04-27
-- [ ] Leggere paper max segmentation (6)
-- [ ] Aggiunta segmentation obsidian (8)
-- [ ] Giustificare normalization (10)
-- [ ] Chech normalization paper kidara (9)
+- [x] Leggere paper max segmentation ✅ 2024-04-30
+- [x] Aggiunta segmentation obsidian ✅ 2024-04-30
+- [x] Giustificare normalization ✅ 2024-04-30
+- [x] Chech normalization paper kidara ✅ 2024-04-30
 - [x] Check cite shorten data augmentation ✅ 2024-04-30
 - [x] Check overleaf bibtex shorten ✅ 2024-04-30
 - [x] Image conversion shorten ✅ 2024-04-30
+- [ ] Riposizionare safety check data augmentation (1)
+- [x] Rimuovere fasola bibtex segmentation ✅ 2024-04-30
+- [ ] Rifrasare segmentation (4)
+- [ ] Modificare segmentation (3)
+- [ ] Giustificare normalization (5)
+- [ ] Giustificare shuffling (6)
+- [ ] Check codice rita augmentation (8)
+- [ ] Check codice max segmentation (9)
