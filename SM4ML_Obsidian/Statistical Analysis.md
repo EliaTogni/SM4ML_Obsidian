@@ -1,0 +1,1 @@
+One way to discover overfitting is to plot the training and validation accuracy at each epoch during training.
