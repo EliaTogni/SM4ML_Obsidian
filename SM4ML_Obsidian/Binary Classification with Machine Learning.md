@@ -91,12 +91,13 @@ I declare that this material, which I now submit for assessment, is entirely my 
 - [x] fixare parentesi muffin image removal ✅ 2024-04-27
 - [x] chagpt global quantities frasca ✅ 2024-04-28
 - [ ] Scelta tipi augmentation (8/10 tipi 25%) rotation, scaling, mirroring, contrast, brightness, blurring, unsharpening, ... (3)
-- [ ] Finire sistemare fino a data augmentation (4)
-- [ ] Rifrasare parte finale image resizing (2)
+- [x] Finire sistemare fino a data augmentation ✅ 2024-04-30
+- [x] Rifrasare parte finale image resizing ✅ 2024-04-30
 - [x] aggiungere simbolo gradi rotation geometric transformation ✅ 2024-04-27
 - [ ] Leggere paper max segmentation (6)
 - [ ] Aggiunta segmentation obsidian (8)
 - [ ] Giustificare normalization (10)
 - [ ] Chech normalization paper kidara (9)
-- [ ] Check cite shorten data augmentation (0)
-- [x] Check overleaf bibtex shorten (1) ✅ 2024-04-30
+- [x] Check cite shorten data augmentation ✅ 2024-04-30
+- [x] Check overleaf bibtex shorten ✅ 2024-04-30
+- [x] Image conversion shorten ✅ 2024-04-30

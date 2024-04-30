@@ -95,39 +95,36 @@ Understanding whether color significantly influences class distinction offers in
 
 Moreover, Greyscale images may exhibit greater resilience to lighting and color variations compared to RGB counterparts. Consequently, evaluating CNN performance on both RGB and Greyscale representations would allow for a direct comparison of color's significance in the classification task.
 
-As term of comparison, Chatifled et al. [59] found a $\sim 3\%$ classification accuracy drop between grayscale and RGB images with their experiments on ImageNet [12] and the PASCAL [60] VOC dataset.
+As term of comparison, it was found a $\sim 3\%$ classification accuracy drop between Greyscale and RGB images\\cite{Shorten}.
 
 ------------------------------------------------------------------------
 
 ## Image Cropping
-A recurrent characteristic of the dataset was the presence of a large white border around several images. The white border surrounding an image contains no relevant information for the classification task, therefore I trimmed the borders to help the CNN focus its attention on the essential features within the image, reducing noise and potential distractions that could hinder classification accuracy. Removing this border would help the model focus on the discriminative features within the image, making it more robust to variations in background and irrelevant details.
+A recurrent characteristic of the dataset was the presence of a large white border around several images. The white border surrounding an image contains no relevant information for the classification task, therefore I trimmed the borders to help the CNN focus its attention on the essential features within the image, reducing noise and potential distractions that could hinder classification accuracy. Removing this border was made to help the model focus on the discriminative features within the image, making it more robust to variations in background and irrelevant details.
 
 ------------------------------------------------------------------------
 
 ## Image Resizing
-One of the defining characteristics of Neural Networks is that they receive inputs of the same size: each neuron so all images need to be resized to a fixed dimension before inputting them to the CNN. It is possible to resize the images larger than the fixed size (in one dimension or both) down to the desired pne using three possible approaches:
+One of the defining characteristics of Neural Networks is that they receive inputs of the same size: each neuron so all images need to be resized to a fixed dimension before inputting them to the CNN. It is possible to resize the images larger than the fixed size (in one dimension or both) down to the desired one using three possible approaches\\cite{Hashemi}:
 1) further cropping their border pixels;
 2) scaling the images down using interpolation;
 3) zero-padding.
 
-Cropping could cause the missing of features or patterns that appear in the peripheral areas of the image. Scaling could deforme the features or patterns across the image. However, since deforming patterns is still preferable than losing them, scaling results to be the reasonable choice to resize larger images. I decided to utilize zero-padding because it has two advantages in comparison with scaling: it does not carry the risk of deforming the patterns in the image, while scaling does, and it speeds up the calculations, in comparison with scaling, resulting in better computational efficiency. The reason of this efficiency is that neighboring zero input units (that is, pixels) will not activate their corresponding convolutional unit in the next layer. Therefore, the weights on outgoing links from input units do not need to be updated if they contain a zero value.
+Cropping could cause the missing of features or patterns that appear in the peripheral areas of the image. Scaling could deforme the features or patterns across the image. However, since deforming patterns is still preferable than losing them, scaling results to be the reasonable choice to resize larger images\\cite{Hashemi}. Therefore, I decided to utilize zero-padding because it has two advantages in comparison with scaling: it does not carry the risk of deforming the patterns in the image, while scaling does, and it speeds up the calculations in comparison with scaling, resulting in better computational efficiency. The reason of this improved efficiency is that neighboring zero input units (that is, pixels) will not activate their corresponding convolutional unit in the next layer\\cite{Hashemi}.
 
-A choice of great importance in terms of model performance is the fixed size. A size that is too large will result in high accuracy but extensive memory usage and a larger neural network. Thus, increasing both the space and time complexity. On the other hand, a size that is too small will result in a more manageable but less accurate network. It is obvious now that choosing this fixed size for images is a matter of tradeoff between computational efficiency and accuracy.
+A choice of great importance in terms of model performance is the fixed size. A size that is too large will result in high accuracy but extensive memory usage and a larger neural network. Thus, increasing both the space and time complexity. On the other hand, a size that is too small will result in a more manageable but less accurate network. It is obvious now that choosing this fixed size for images is a matter of tradeoff between computational efficiency and accuracy. The selected size for the images was $256 \times 256$.
 
 ------------------------------------------------------------------------
 
 ## Data Augmentation
+One of the characteristics of these networks is that they are heavily reliant on big data to avoid overfitting. Due to the relatively small size of the dataset, I decided to rely on **Data Augmentation**, a data-space solution to this problem which encompasses a set of techniques that enhance the size and quality of training datasets such that better Deep Learning models can be built using them\\cite{Shorten}. 
 
-==citare paper \\cite{Shorten}==
+To build useful models, it's essential for the validation error to continue decreasing alongside the training error, a goal achievable through Data Augmentation. The augmented data will represent a more comprehensive set of possible data points. Creating more diverse data through augmentation ensures the model to be trained on a broader range of scenarios, potentially improving its performance on unseen data.
 
-One of the characteristics of these networks is that they are heavily reliant on big data to avoid overfitting. Due to the relatively small size of the dataset, I decided to rely on **Data Augmentation**, a ==data-space solution== to this problem which encompasses a set of techniques that enhance the size and quality of training datasets such that better Deep Learning models can be built using them\\cite{Shorten}. 
-
-==To build useful models, the validation error must continue to decrease with the training error and this is achievable through Data Augmentation.== The augmented data will represent a more comprehensive set of possible data points, ==thus minimizing the distance between the training and validation set, as well as any future testing sets.==
-
-Since the ==restricted== dimension of the dataset, I chose to perform Data Augmentation. In fact, while many other strategies for increasing generalization performance focus on the model’s architecture itself, Data Augmentation approaches overfitting from the root of the problem, the training dataset. This is based on the assumption that it is possible to extract more information from the original dataset through augmentations. These augmentations artificially increase the training dataset size by either data warping or oversampling\\cite{Shorten}.
+Since the restricted dimension of the dataset, I chose to perform Data Augmentation. In fact, while many other strategies for increasing generalization performance focus on the model’s architecture itself, Data Augmentation approaches overfitting from the root of the problem, the training dataset. This is based on the assumption that it is possible to extract more information from the original dataset through augmentations. These augmentations artificially increase the training dataset size by either data warping or oversampling\\cite{Shorten}.
 
 It is possible to distinguish different techniques for augmenting data:
-1) **geometric transformations**: randomly flip, crop, rotate, stretch, and scale images. need to be careful about applying multiple transformations on the same images, as this can reduce model performance;
+1) **geometric transformations**: randomly flip, crop, rotate, stretch, and scale images. Care should be taken when applying multiple transformations on the same images, as this has the potential to reduce model performance;
 2) **color space transformations**: randomly change RGB color channels, contrast, and brightness;
 3) **noise Injection**: injecting a matrix of random values, usually drawn from a Gaussian distribution. Adding noise to images can help NNs learn more robust features;
 4) **kernel filters**: randomly change the sharpness or blurring of the image;
@@ -136,63 +133,60 @@ It is possible to distinguish different techniques for augmenting data:
 
 The augmentations I chose to perform are described in the following sections.
 
-Discussione riguardante the safety of an augmentation.
+Considering the safety of data augmentation is fundamental in ensuring the integrity and reliability of machine learning models. In fact, certain transformations might generate unrealistic or misleading data points, leading to erroneous model predictions.
+
 ### Geometric transformations
-This family of transformations takes the image and changes it, keeping the pixel values the same. These changes have been applied not only to increase the number of training examples, ==but also to avoid that the network could learn useless features like the perspective or particular background details==. The main disadvantages of geometric transformations are increased need of memory, transformation costs and higher training time.
+This family of transformations takes the image and changes it, keeping the pixel values the same. These changes have been applied not only to increase the number of training examples, but also to prevent the network from overfitting to specific features like perspective or background details that may be present in the original training data but are not relevant to the classification task. The main disadvantages of geometric transformations are the increased need of memory, the transformation costs and the higher training time.
+
+In terms of safety of the geometric transformations, I evaluated all of the chosen augmentations to be safe and to be useful to improve the robustness of the model.
+
 #### Flipping
 This geometric transformation consists in flipping the horizonal axis.
-==safety of flipping==
 
 ------------------------------------------------------------------------
 
 #### Mirroring
 This geometric transformation consists in flipping the vertical axis.
-==safety of flipping==
 
 ------------------------------------------------------------------------
 
 #### Rotation
-Rotation augmentations are done by rotating the image right or left on an axis of a random degree. Tipically, the safety of rotation augmentations is heavily determined by the rotation degree parameter but in our binary classification case, it is safe to assume that the safety of this augmentation will not be influenced by the chosen degree. ==chiedere chatgpt se rotation è safe in questo contesto==
+Rotation augmentations are done by rotating the image right or left on an axis of a random degree.
 
 ------------------------------------------------------------------------
 
 ## Color space transformation
-This family of transformations changes the pixel values, resulting in the ==consequential== change of the colors of the pixels. These changes have been applied in order to differentiate the color scheme, thus avoiding the network to learn ==bias (plurale)== over some particular palette or scheme of the image’s ==lighting==.
+This family of transformations changes the pixel values, resulting in the consequential change of the colors of the pixels. Since color variations occur naturally in real-world scenarios due to factors like lighting conditions, camera settings, and environmental factors. by augmenting the dataset with color space transformations, I simulate these real-world variations, enabling the model to learn more representative features and generalize effectively. Furthermore, these changes have been applied in order to differentiate the color scheme, thus avoiding the network to learn biases over some particular palette or scheme of the image’s lighting.
 
-Digital image data are usually encoded as a tensor of $\text{height} \times \text{width} \times \text{color channel}$, that is, $3$ stacked matrices, each of size $\text{height} \times \text{width}$.
+Similar to geometric transformations, the main disadvantages of color space transformations are the increased need of memory, the transformation costs and the higher training time. Additionally, color transformations may discard important color information and thus are not always a label-preserving transformation.
 
-Similar to geometric transformations, the main disadvantages of color space transformations are increased need of memory, transformation costs and higher training time. Additionally, color transformations may discard important color information and thus are not always a label-preserving transformation.
-
-In effect, color space transformations will eliminate color biases present in the dataset in favor of spatial characteristics but, for some tasks, color could be a fundamental distinctive feature. Since I decided to analyze both a copy of the dataset using the RGB color schema and a copy of the dataset using the Greyscale color schema, the importance of the color in this particular classification task will be analyzed ==...==
+In effect, color space transformations will eliminate color biases present in the dataset in favor of spatial characteristics but, for some tasks, color could be a fundamental distinctive feature.
 
 #### Brightness
-Lighting biases are amongst the most frequently occurring challenges to image recognition problems. Therefore, the effectiveness of color space transformations, also known as **photometric transformations**, is fairly intuitive to conceptualize. A quick fix to overly bright or dark images is to loop through the images and decrease or increase the pixel values by a constant value. For example, when decreasing the pixel values of an image to simulate a darker environment, it may become impossible to see the objects in the image.
+This color space transformation consists in the decreasing or increasing of the pixel values by a constant value. For example, when decreasing the pixel values of an image to simulate a darker environment, it may become impossible to see the objects in the image.
+
+------------------------------------------------------------------------
 
 #### Contrast
-
-contrast and saturation
-
-Another quick color space manipulation is to splice out individual RGB color matrices. Another transformation consists of restricting pixel values to a certain min or max value.
+This color space transformation involves modifying the distribution of pixel intensities within an image to increase or decrease the difference between light and dark areas.
 
 ------------------------------------------------------------------------
 
 #### Saturation
-
+This color space transformation involves adjusting the intensity or purity of colors within an image while keeping the brightness and contrast levels constant.
 
 ------------------------------------------------------------------------
 
 ### Kernel filters
-Kernel filters are modifications that change the pixel values, resulting in the change of the arrangement of the pixels. Filters are a very popular technique in image processing to sharpen and blur images. These filters work by sliding an $n \times n$ matrix across an image with either a **Gaussian blur filter**, which will result in a blurrier image, or a **high contrast vertical or horizontal edge filter** which will result in a sharper image along edges.
+Kernel filters are modifications that change the pixel values, resulting in the change of the arrangement of the pixels. Filters are a very popular technique in image processing to sharpen and blur images. These filters operate by moving a matrix of size $n \times n$ across an image, applying either a box blur filter, causing the image to become blurrier, or a high-contrast vertical or horizontal edge filter, resulting in sharper edges in the image\\cite{Shorten}.
 
-A disadvantage of this technique is that it is very similar to the internal mechanisms of CNNs. CNNs have parametric kernels that learn the optimal way to represent images layer by-layer. Therefore, kernel filters can be better implemented as a layer of the network rather than as an addition to the dataset through Data Augmentation.
-
-#### Sharpening
-Sharpening images for Data Augmentation could result in encapsulating more details about objects of interest. As previously anticipated, the images detail evidence is increased by exploiting a Gaussian blur and subtracting it to the original image, obtaining in this way an increment in terms of contrast for the smallest details.
+#### Unsharp masking sharpening
+This kernel filter involves exploiting a method commonly known as **unsharp masking sharpening**: a Gaussian blur is applied to the dataset and  it is then subtracted from the original image, obtaining in this way an increment in terms of contrast for the smallest details. Sharpening images for Data Augmentation could result in encapsulating more details about objects of interest.
 
 ------------------------------------------------------------------------
 
 #### Blurring
-Intuitively, blurring images for Data Augmentation could lead to higher resistance to motion blur during testing. In our case, the blurring is obtained by setting the value of each pixel to the average of the pixels in the radius of 5.
+This kernel filter involves, as the name suggests, blurring the image and reducing noise, resulting in a smoothed version of the image. Intuitively, blurring images for Data Augmentation could lead to higher resistance to motion blur during testing. In my case, the blurring is obtained through a **box blur**, that is, by setting the value of each pixel to the average of the pixels in the radius of 3.
 
 ------------------------------------------------------------------------
 

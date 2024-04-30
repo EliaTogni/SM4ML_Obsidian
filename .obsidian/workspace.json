@@ -1,22 +1,18 @@
 {
   "main": {
-    "id": "f66c1ec17e6cf79b",
+    "id": "8b8363fac4625f61",
     "type": "split",
     "children": [
       {
-        "id": "87c3477d46f2edb6",
+        "id": "b8f307b668552149",
         "type": "tabs",
         "children": [
           {
-            "id": "ac345b77a49ce139",
+            "id": "df254cc2636b6b1a",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Chihuahua vs Muffin Dataset.md",
-                "mode": "source",
-                "source": false
-              }
+              "type": "empty",
+              "state": {}
             }
           }
         ]
@@ -25,15 +21,15 @@
     "direction": "vertical"
   },
   "left": {
-    "id": "0e19fff1128b1ee3",
+    "id": "f2ca40d031df40d2",
     "type": "split",
     "children": [
       {
-        "id": "47739b86c90fce4b",
+        "id": "4a67a839c3193fa0",
         "type": "tabs",
         "children": [
           {
-            "id": "da2a1821fb4e6bcb",
+            "id": "159e92bc98da72cc",
             "type": "leaf",
             "state": {
               "type": "file-explorer",
@@ -43,7 +39,7 @@
             }
           },
           {
-            "id": "9512b0a5d7aad161",
+            "id": "aa28d53ff9ae3ebd",
             "type": "leaf",
             "state": {
               "type": "search",
@@ -58,7 +54,7 @@
             }
           },
           {
-            "id": "aa889a277ec09066",
+            "id": "a7a209a91a91b398",
             "type": "leaf",
             "state": {
               "type": "bookmarks",
@@ -69,23 +65,22 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 300
   },
   "right": {
-    "id": "8604fe034c41210d",
+    "id": "a0f146d866262220",
     "type": "split",
     "children": [
       {
-        "id": "bc5c52c2909a6b05",
+        "id": "a7c91d1912ffbabd",
         "type": "tabs",
         "children": [
           {
-            "id": "5fafb969eb77f373",
+            "id": "9efb794e9c149cf1",
             "type": "leaf",
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Chihuahua vs Muffin Dataset.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -97,19 +92,18 @@
             }
           },
           {
-            "id": "90b40345f185635f",
+            "id": "309bc1b25c5ab4f8",
             "type": "leaf",
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Chihuahua vs Muffin Dataset.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
             }
           },
           {
-            "id": "0c1160a99d9984c5",
+            "id": "66932789ea94b6fb",
             "type": "leaf",
             "state": {
               "type": "tag",
@@ -120,13 +114,11 @@
             }
           },
           {
-            "id": "ce4f8113ce56afcc",
+            "id": "70292b3fe4d68036",
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {
-                "file": "Chihuahua vs Muffin Dataset.md"
-              }
+              "state": {}
             }
           }
         ]
@@ -146,29 +138,6 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "ac345b77a49ce139",
-  "lastOpenFiles": [
-    "Binary Classification with Machine Learning.md",
-    "Chihuahua vs Muffin Dataset.md",
-    "Results and Conclusion.md",
-    "Statistical Analysis.md",
-    "Environment and used tools.md",
-    "Introduction.md",
-    "Images/img_2_779.jpg",
-    "Images/img_2_986.jpg",
-    "Images/img_4_756.jpg",
-    "Images/img_4_980.jpg",
-    "Images/HospitalizedWoman.jpg",
-    "Images/ChihuahuaMuffin.jpg",
-    "Images/ChihuahuaLog.jpg",
-    "Images/BothChihuahuaMuffin.jpg",
-    "Assets",
-    "img_0_1167.jpg",
-    "Images",
-    "Images/Preprocessing Pipeline.png",
-    "Methodology.md",
-    "Images Removal.md",
-    "Dataset Preprocessing.md",
-    "Data Organization.md"
-  ]
+  "active": "159e92bc98da72cc",
+  "lastOpenFiles": []
 }
