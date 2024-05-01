@@ -86,7 +86,7 @@ Classification of degree of imbalance in data \cite {Kumar}.
 | Moderate                   | $1 - 20\%$ of the dataset        |
 | Mild                       | $20 - 40 \%$ of the dataset      |
 
-Good results can be obtained, regardless of class disproportion, if both groups are well represented and come from non-overlapping distributions\\cite{Johnson}. In the considered case, the Imbalance Ratio is equal to $1,22046$ ($3161$ instances of dogs images vs $2590$ instances of muffins images), which is a score sufficiently close to $1$ to proceed without having to make any action to fix the unbalance. 
+Good results can be obtained, regardless of class disproportion, if both groups are well represented and come from non-overlapping distributions\\cite{Johnson}. In the considered case, the Imbalance Ratio is equal to $1,22046$ ($3161$ instances of chihuahuas images vs $2590$ instances of muffins images), which is a score sufficiently close to $1$ to proceed without having to make any action to fix the unbalance. 
 
 ------------------------------------------------------------------------
 
@@ -123,6 +123,8 @@ To build useful models, it's essential for the validation error to continue decr
 
 Since the restricted dimension of the dataset, I chose to perform Data Augmentation. In fact, while many other strategies for increasing generalization performance focus on the model’s architecture itself, Data Augmentation approaches overfitting from the root of the problem, the training dataset. This is based on the assumption that it is possible to extract more information from the original dataset through augmentations. These augmentations artificially increase the training dataset size by either data warping or oversampling\\cite{Shorten}.
 
+Furthermore, considering the safety of data augmentation is fundamental in ensuring the integrity and reliability of machine learning models. In fact, certain transformations might generate unrealistic or misleading data points, leading to erroneous model predictions. All of the chosen augmentations were evaluated not only to be safe but to also improve significantly the robustness of the model.
+
 It is possible to distinguish different techniques for augmenting data:
 1) **geometric transformations**: randomly flip, crop, rotate, stretch, and scale images. Care should be taken when applying multiple transformations on the same images, as this has the potential to reduce model performance;
 2) **color space transformations**: randomly change RGB color channels, contrast, and brightness;
@@ -131,14 +133,10 @@ It is possible to distinguish different techniques for augmenting data:
 5) **random erasing**: this technique was specifically designed to prevent overfitting by altering the input space and, consequently, to combat image recognition challenges due to occlusion. By removing certain input patches, the model is forced to find other descriptive characteristics;
 6) **mixing images**: blending and mixing multiple images by averaging their pixel values.
 
-For this purpose I created new images by applying some augmentations over a randomly extracted set of images ($25\%$ of the dataset). The augmentations I chose to perform are described in the following sections.
-
-Considering the safety of data augmentation is fundamental in ensuring the integrity and reliability of machine learning models. In fact, certain transformations might generate unrealistic or misleading data points, leading to erroneous model predictions.
+For this purpose, new images were created by applying some augmentations over a randomly extracted set of images ($25\%$ of the dataset). The chosen augmentations are described in the following sections.
 
 ### Geometric transformations
 This family of transformations takes the image and changes it, keeping the pixel values the same. These changes have been applied not only to increase the number of training examples, but also to prevent the network from overfitting to specific features like perspective or background details that may be present in the original training data but are not relevant to the classification task. The main disadvantages of geometric transformations are the increased need of memory, the transformation costs and the higher training time.
-
-In terms of safety of the geometric transformations, I evaluated all of the chosen augmentations to be safe and to be useful to improve the robustness of the model.
 
 #### Flipping
 This geometric transformation consists in flipping the horizonal axis.
@@ -193,26 +191,28 @@ immagine esempio
 Kernel filters are modifications that change the pixel values, resulting in the change of the arrangement of the pixels. Filters are a very popular technique in image processing to sharpen and blur images. These filters operate by moving a matrix of size $n \times n$ across an image, applying either a box blur filter, causing the image to become blurrier, or a high-contrast vertical or horizontal edge filter, resulting in sharper edges in the image\\cite{Shorten}.
 
 #### Unsharp masking sharpening
-This kernel filter involves exploiting a method commonly known as **unsharp masking sharpening**: a Gaussian blur is applied to the dataset and  it is then subtracted from the original image, obtaining in this way an increment in terms of contrast for the smallest details. Sharpening images for Data Augmentation could result in encapsulating more details about objects of interest.
+This kernel filter involves exploiting a method commonly known as **unsharp masking sharpening**: a Gaussian blur is applied to the dataset and it is then subtracted from the original image, obtaining in this way an increment in terms of contrast for the smallest details. Sharpening images for Data Augmentation could result in encapsulating more details about objects of interest.
 
 immagine esempio
 
 ------------------------------------------------------------------------
 
 #### Blurring
-This kernel filter involves, as the name suggests, blurring the image and reducing noise, resulting in a smoothed version of the image. Intuitively, blurring images for Data Augmentation could lead to higher resistance to motion blur during testing. In my case, the blurring is obtained through a **box blur**, that is, by setting the value of each pixel to the average of the pixels in the radius of 3.
+This kernel filter involves, as the name suggests, blurring the image and reducing noise, resulting in a smoothed version of the image. Intuitively, blurring images for Data Augmentation could lead to higher resistance to motion blur during testing. The blurring is obtained through a **box blur**, that is, by setting the value of each pixel to the average of the pixels in the radius of 3.
 
 immagine esempio
 
 ------------------------------------------------------------------------
 
-### Image Segmentation 
-Even if some filters simplify a picture giving almost only the main shape, in some cases this is not enough to exclude the features we know are completely irrelevant. The problem in the recognition of the principal content of the image is given by the fact that an image could contain a lot of different details that increase the difficulty of the task of classification, thus, I decided to also apply **segmentation** to the datasets. Segmentation is the process of partitioning an image or video into meaningful regions to identify and differentiate objects or regions of interest. The goal is to classify each pixel or region of the image as belonging to one of two classes: foreground or background. ==In order to simplify the images, a K-Means clustering algorithm has been applied over each image: every pixel has been set to the value of the centroid of its cluster, with a total of 4 cluster per image. In this way, the images became very simple and only the principal shapes and colors survived.==
+## Image Segmentation 
+Even if some filters simplify a picture giving almost only the main shape, in some cases this is not enough to exclude the features we know are completely irrelevant. The problem in the recognition of the principal content of the image is given by the fact that an image could contain a lot of different details that increase the difficulty of the task of classification, thus, I decided to also apply **segmentation** to the datasets. Segmentation is the process of partitioning an image or video into meaningful regions to identify and differentiate objects or regions of interest. The goal is to classify each pixel or region of the image as belonging to one of two classes: foreground or background. 
+
+A $K$-Means clustering algorithm is employed on each image, assigning every pixel to the centroid of its respective cluster. Using this approach, pixels with similar feature values are grouped into same clusters, which represent different segments in the image. As result, each image was segmented into a total of four clusters, resulting in simplified images where only the primary shapes and colors are retained. 
 
 immagine esempio segmentation
 
-The result of the data segmentation and augmentation has been eight datasets that I analyzed separately:
-- the original couple of datasets (used in the hyper parameter tuning);
+The result of the data segmentation and augmentation has been eight different datasets:
+- the original couple of datasets (==used in the hyper parameter tuning==);
 - the augmented couple of datasets;
 - the segmented couple of datasets;
 - the augmented and segmented couple of datasets.
@@ -221,12 +221,12 @@ In the table below a brief summary of our generated datasets is provided.
 
 | Dataset                       | Number of Chihuahua | Number of Muffin | Total images |
 | ----------------------------- | ------------------- | ---------------- | ------------ |
-| RGB                           |                     |                  |              |
-| Greyscale                     |                     |                  |              |
+| RGB                           | 3161                | 2590             | 5751         |
+| Greyscale                     | 3161                | 2590             | 5751         |
 | RGB_Augmented                 |                     |                  |              |
 | Greyscale_Augmented           |                     |                  |              |
-| RGB_Segmented                 |                     |                  |              |
-| Greyscale_Segmented           |                     |                  |              |
+| RGB_Segmented                 | 3161                | 2590             | 5751         |
+| Greyscale_Segmented           | 3161                | 2590             | 5751         |
 | RGB_Augmented_Segmented       |                     |                  |              |
 | Greyscale_Augmented_Segmented |                     |                  |              |
 
@@ -234,12 +234,12 @@ In the table below a brief summary of our generated datasets is provided.
 ------------------------------------------------------------------------
 
 ## Image Normalization
-==Each image in the datasets is normalized to pixel values between 0 and 1. Normalization is useful to have comparable values in every layer of a neural network. Since the output of our CNNs will be between 0 and 1 (because we are dealing with a classification task), normalizing the input will make learning easier.==
+Each image in the datasets is normalized to pixel values between $0$ and $1$. Since the output of the NNs will be between $0$ and $1$ (because we are dealing with a classification task), normalizing the input will ensure that the input features (pixel values) will have similar scales. This can help accelerate the convergence of optimization algorithms during model training, as it reduces the likelihood of vanishing or exploding gradients and it is also useful to have comparable values in every layer of a neural network.
 
 ------------------------------------------------------------------------
 
 ## Dataset Shuffling
-==A shuffle operation is performed before splitting, in order to get rid of possible patterns or biases in the data gathering process. Clearly, if the data are not representative of the whole population, shuffling the dataset will not fix this problem. However, for instance, if the data are collected using some pattern (e.g. taking pictures of people from town to town), then this shuffle operation will get rid of the intrinsic pattern of how the data have been collected or generated.==
+Before splitting, a shuffle operation is executed to eliminate potential patterns or biases in the data collection process. It is important to note that shuffling the dataset will not address issues if the data is not representative of the entire population. However, if there is a systematic pattern in how the data was collected or ordered (e.g., all images of one class followed by another), shuffling will disrupt this inherent pattern, granting a more randomized distribution of the data. The shuffling will also ensure that each batch of training data represents a diverse mix of images from different categories or classes.
 
 ------------------------------------------------------------------------
 

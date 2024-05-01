@@ -84,9 +84,9 @@ I declare that this material, which I now submit for assessment, is entirely my 
 - [x] Scelta augmentation  ✅ 2024-04-26
 - [x] Chiedere a chat gpt quanti tipi di augmentation ci sono ✅ 2024-04-26
 - [x] Chiedere a chatgpt di classificare le varie augmentation ✅ 2024-04-26
-- [ ] leggere paper segmentation (2)
+- [x] leggere paper segmentation (2) ✅ 2024-05-01
 - [x] Aggiornare report con modifiche finora ✅ 2024-04-26
-- [ ] Check codice max augmentation (7)
+- [ ] Check codice max augmentation (8)
 - [x] Check paper rita augmentation ✅ 2024-04-30
 - [x] fixare parentesi muffin image removal ✅ 2024-04-27
 - [x] chagpt global quantities frasca ✅ 2024-04-28
@@ -101,11 +101,16 @@ I declare that this material, which I now submit for assessment, is entirely my 
 - [x] Check cite shorten data augmentation ✅ 2024-04-30
 - [x] Check overleaf bibtex shorten ✅ 2024-04-30
 - [x] Image conversion shorten ✅ 2024-04-30
-- [ ] Riposizionare safety check data augmentation (1)
+- [x] Riposizionare safety check data augmentation ✅ 2024-05-01
 - [x] Rimuovere fasola bibtex segmentation ✅ 2024-04-30
-- [ ] Rifrasare segmentation (4)
-- [ ] Modificare segmentation (3)
-- [ ] Giustificare normalization (5)
-- [ ] Giustificare shuffling (6)
-- [ ] Check codice rita augmentation (8)
-- [ ] Check codice max segmentation (9)
+- [x] Rifrasare segmentation ✅ 2024-05-01
+- [x] Modificare segmentation ✅ 2024-05-01
+- [x] Giustificare normalization ✅ 2024-05-01
+- [x] Giustificare shuffling ✅ 2024-05-01
+- [ ] Check codice rita augmentation (9)
+- [ ] Check codice max segmentation (10)
+- [ ] Copytree RGB_Augmented
+- [ ] Copytree Greyscale_Augmented
+- [ ] Copytree RGB_Segmented
+- [ ] Copytree Greyscale_Segmented
+- [x] Compilare tabella segmentation (7) ✅ 2024-05-01

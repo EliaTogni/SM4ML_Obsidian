@@ -20,6 +20,24 @@
             }
           }
         ]
+      },
+      {
+        "id": "33a187daf74cd379",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "fa84656087d9e6e5",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Chihuahua vs Muffin Dataset.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          }
+        ]
       }
     ],
     "direction": "vertical"
@@ -86,7 +104,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Binary Classification with Machine Learning.md",
+                "file": "Chihuahua vs Muffin Dataset.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -103,7 +121,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Binary Classification with Machine Learning.md",
+                "file": "Chihuahua vs Muffin Dataset.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -126,7 +144,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Binary Classification with Machine Learning.md"
+                "file": "Chihuahua vs Muffin Dataset.md"
               }
             }
           }
@@ -147,10 +165,10 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "ac345b77a49ce139",
+  "active": "fa84656087d9e6e5",
   "lastOpenFiles": [
-    "Chihuahua vs Muffin Dataset.md",
     "Binary Classification with Machine Learning.md",
+    "Chihuahua vs Muffin Dataset.md",
     "Results and Conclusion.md",
     "Statistical Analysis.md",
     "Environment and used tools.md",
