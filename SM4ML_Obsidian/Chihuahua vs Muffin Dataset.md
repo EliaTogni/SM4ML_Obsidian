@@ -133,7 +133,10 @@ It is possible to distinguish different techniques for augmenting data:
 5) **random erasing**: this technique was specifically designed to prevent overfitting by altering the input space and, consequently, to combat image recognition challenges due to occlusion. By removing certain input patches, the model is forced to find other descriptive characteristics;
 6) **mixing images**: blending and mixing multiple images by averaging their pixel values.
 
-For this purpose, new images were created by applying some augmentations over a randomly extracted set of images ($25\%$ of the dataset). The chosen augmentations are described in the following sections.
+For this purpose, new images were created by applying some augmentations over a randomly extracted set of images ($25\%$ of the dataset). ==selezioneresti circa 647, arrotondato a 640 immagini dalla prima classe e circa 791, arrotondato a 800 immagini dalla seconda classe per rendere le dimensioni dei due dataset più vicine possibili, con un totale di circa 1440 immagini.==
+
+
+The chosen augmentations are described in the following sections.
 
 ### Geometric transformations
 This family of transformations takes the image and changes it, keeping the pixel values the same. These changes have been applied not only to increase the number of training examples, but also to prevent the network from overfitting to specific features like perspective or background details that may be present in the original training data but are not relevant to the classification task. The main disadvantages of geometric transformations are the increased need of memory, the transformation costs and the higher training time.
@@ -223,12 +226,12 @@ In the table below a brief summary of our generated datasets is provided.
 | ----------------------------- | ------------------- | ---------------- | ------------ |
 | RGB                           | 3161                | 2590             | 5751         |
 | Greyscale                     | 3161                | 2590             | 5751         |
-| RGB_Augmented                 |                     |                  |              |
-| Greyscale_Augmented           |                     |                  |              |
+| RGB_Augmented                 | 3801                | 3390             | 7191         |
+| Greyscale_Augmented           | 3801                | 3390             | 7191         |
 | RGB_Segmented                 | 3161                | 2590             | 5751         |
 | Greyscale_Segmented           | 3161                | 2590             | 5751         |
-| RGB_Augmented_Segmented       |                     |                  |              |
-| Greyscale_Augmented_Segmented |                     |                  |              |
+| RGB_Augmented_Segmented       | 3801                | 3390             | 7191         |
+| Greyscale_Augmented_Segmented | 3801                | 3390             | 7191         |
 
 
 ------------------------------------------------------------------------

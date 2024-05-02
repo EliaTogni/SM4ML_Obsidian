@@ -52,11 +52,9 @@ I declare that this material, which I now submit for assessment, is entirely my 
 - [x] Kumar bibtex check utilità ✅ 2024-04-22
 - [x] Dogs_folder elenco immagini da rimuovere ✅ 2024-04-22
 - [x] aggiungere imbalance ration dogs_folder ✅ 2024-04-22
-- [ ] immagini 3_16, 3_338, e_334 chihuahua con schiuma GradCAM
 - [x] documentazione funzione di cropping (2) ✅ 2024-04-25
 - [x] documentazione funzione di padding e resizing (3) ✅ 2024-04-25
 - [x] Rileggere paper resizing per scegliere size ✅ 2024-04-24
-- [ ] Aggiungere matrice di confusione nella fase di analisi statistica (paper imbalanced data)
 - [x] Check se Rita usa interpolation per confrontare con lo zero padding (non lo fa) ✅ 2024-04-24
 - [x] Fare dictionary size delle immagini nei dataset ✅ 2024-04-23
 - [x] Capire dove inserire codice dictionary ✅ 2024-04-22
@@ -75,18 +73,18 @@ I declare that this material, which I now submit for assessment, is entirely my 
 - [x] Check codice Max definizione funzioni ✅ 2024-04-24
 - [x] chatgpt try with python ✅ 2024-04-24
 - [x] ImageChops (2) ✅ 2024-04-24
-- [ ] Motivare il bbox crop dopo rgb/grey
+- [x] Motivare il bbox crop dopo rgb/grey ✅ 2024-05-02
 - [x] Fixare zero padding (1) ✅ 2024-04-25
 - [x] check if nuovo metodo modifica immagini ✅ 2024-04-24
-- [ ] aggiungere tuple output funzioni
+- [x] aggiungere tuple output funzioni ✅ 2024-05-02
 - [x] leggere paper augmentation ✅ 2024-04-26
 - [x] Rifrasare image cropping spiegazione (3) ✅ 2024-04-27
 - [x] Scelta augmentation  ✅ 2024-04-26
 - [x] Chiedere a chat gpt quanti tipi di augmentation ci sono ✅ 2024-04-26
 - [x] Chiedere a chatgpt di classificare le varie augmentation ✅ 2024-04-26
-- [x] leggere paper segmentation (2) ✅ 2024-05-01
+- [x] leggere paper segmentation ✅ 2024-05-01
 - [x] Aggiornare report con modifiche finora ✅ 2024-04-26
-- [ ] Check codice max augmentation (8)
+- [x] Check codice max augmentation  ✅ 2024-05-01
 - [x] Check paper rita augmentation ✅ 2024-04-30
 - [x] fixare parentesi muffin image removal ✅ 2024-04-27
 - [x] chagpt global quantities frasca ✅ 2024-04-28
@@ -107,10 +105,40 @@ I declare that this material, which I now submit for assessment, is entirely my 
 - [x] Modificare segmentation ✅ 2024-05-01
 - [x] Giustificare normalization ✅ 2024-05-01
 - [x] Giustificare shuffling ✅ 2024-05-01
-- [ ] Check codice rita augmentation (9)
-- [ ] Check codice max segmentation (10)
-- [ ] Copytree RGB_Augmented
-- [ ] Copytree Greyscale_Augmented
-- [ ] Copytree RGB_Segmented
-- [ ] Copytree Greyscale_Segmented
-- [x] Compilare tabella segmentation (7) ✅ 2024-05-01
+- [x] Check codice rita augmentation (9) ✅ 2024-05-01
+- [x] Copytree RGB_Augmented ✅ 2024-05-01
+- [x] Copytree Greyscale_Augmented ✅ 2024-05-01
+- [x] Copytree RGB_Segmented ✅ 2024-05-01
+- [x] Copytree Greyscale_Segmented ✅ 2024-05-01
+- [x] Compilare tabella segmentation ✅ 2024-05-01
+- [x] Aggiunta kidara e max a preferiti ✅ 2024-05-02
+- [x] struttura codice su carta ✅ 2024-05-02
+- [x] sistemare struttura codice colab ✅ 2024-05-02
+- [x] Sistemare apply geometric ✅ 2024-05-02
+- [x] Sistemare apply color ✅ 2024-05-02
+- [x] Sistemare apply filters ✅ 2024-05-02
+- [x] Scelta parametri geometric ✅ 2024-05-02
+- [x] Scelta parametri color ✅ 2024-05-02
+- [x] Raggruppare funzioni ✅ 2024-05-02
+- [x] Seed extract_image_list per riproducibilità ✅ 2024-05-02
+- [x] Suddividere numero immagini per il numero di transformazioni ✅ 2024-05-02
+- [x] Check codice Reeta augmentation ✅ 2024-05-02
+- [ ] Scelta parametri filters
+- [x] Testing funzioni transformations and filters ✅ 2024-05-02
+- [ ] cleaning up immagini chihuahua
+- [ ] Print numero elementi in ciascuna directory augmented
+- [ ] Copytree RGB_Augmented_Segmented
+- [ ] Copytree Greyscale_Augmented_Segmented
+- [ ] Check codice Max segmentation
+- [ ] Sistemare segmentation
+- [ ] Check codice kidara Dataset Normalization
+- [ ] Check codice kidara Dataset shuffling
+- [ ] Sistemare codice kidara normalization
+- [ ] Sistemare codice kidata shuffling 
+- [ ] Closing operator documentarsi
+- [ ] Codice check empty test e remove
+- [ ] Rifrasare data augmentation
+- [ ] Omogenizzare commenti codice in inglese
+- [ ] Check codice a chatgpt
+- [ ] immagini 3_16, 3_338, e_334 chihuahua con schiuma GradCAM
+- [ ] Aggiungere matrice di confusione nella fase di analisi statistica (paper imbalanced data)
