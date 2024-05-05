@@ -31,13 +31,15 @@ I declare that this material, which I now submit for assessment, is entirely my 
 			- [[Chihuahua vs Muffin Dataset#Training Set |Training Set]]
 			- [[Chihuahua vs Muffin Dataset#Validation Set |Validation Set]]
 			- [[Chihuahua vs Muffin Dataset#Testing Set |Testing Set]]
-- Experiments
-	- Artificial Neural Networks
-		- An Introduction to Artificial Neural Networks
-		- Multi Level Neural Networks
+- [[Experiments]]
+	- [[Experiments#Artificial Neural Networks |Artificial Neural Networks]]
+		- [[Experiments#An introduction to Artificial Neural Networks|An Introduction to Artificial Neural Networks]]
+		- [[Experiments#Multi Layer Neural Networks |Multi Layer Neural Networks]]
 	- Convolutional Neural Networks
 		- An Introduction to Convolutional Neural Networks
-		- Inception V3
+	- Chosen structures
+		- MLNN
+		- Inception V$3$
 		- TogNet
 - [[Statistical Analysis]]
 	- Grad-CAM
@@ -123,22 +125,36 @@ I declare that this material, which I now submit for assessment, is entirely my 
 - [x] Seed extract_image_list per riproducibilità ✅ 2024-05-02
 - [x] Suddividere numero immagini per il numero di transformazioni ✅ 2024-05-02
 - [x] Check codice Reeta augmentation ✅ 2024-05-02
-- [ ] Scelta parametri filters
+- [x] Scelta parametri filters ✅ 2024-05-03
 - [x] Testing funzioni transformations and filters ✅ 2024-05-02
-- [ ] cleaning up immagini chihuahua
-- [ ] Print numero elementi in ciascuna directory augmented
-- [ ] Copytree RGB_Augmented_Segmented
-- [ ] Copytree Greyscale_Augmented_Segmented
-- [ ] Check codice Max segmentation
-- [ ] Sistemare segmentation
-- [ ] Check codice kidara Dataset Normalization
+- [x] cleaning up immagini chihuahua ✅ 2024-05-03
+- [x] Print numero elementi in ciascuna directory augmented ✅ 2024-05-03
+- [x] Copytree RGB_Augmented_Segmented ✅ 2024-05-03
+- [x] Copytree Greyscale_Augmented_Segmented ✅ 2024-05-03
+- [x] Sistemare segmentation ✅ 2024-05-03
+- [x] Cancellare repo segmentation ✅ 2024-05-03
+- [x] Creare dir examples 10 muffin 10 chihuahua codice ✅ 2024-05-05
+- [ ] If preprocessing data augmentation
+- [ ] Testare segmentation su examples
+- [x] Check codice kidara Dataset Normalization ✅ 2024-05-05
+- [ ] Testare normalization su examples
 - [ ] Check codice kidara Dataset shuffling
+- [ ] Testare shuffling su examples
 - [ ] Sistemare codice kidara normalization
 - [ ] Sistemare codice kidata shuffling 
-- [ ] Closing operator documentarsi
-- [ ] Codice check empty test e remove
+- [x] Closing operator documentarsi ✅ 2024-05-05
+- [x] Codice check empty test e remove ✅ 2024-05-05
 - [ ] Rifrasare data augmentation
 - [ ] Omogenizzare commenti codice in inglese
+- [ ] Estrarre immagini x obsidian data augmentation
+- [x] Correggere /flip_, /mirror_ etc in funzioni ✅ 2024-05-05
 - [ ] Check codice a chatgpt
+- [ ] Leggere ANN Max
+- [ ] Papers ANN
+- [ ] Scrivere ANN
+- [ ] Leggere CNN Max
+- [ ] Leggere CNN Reeta
+- [ ] Scrivere CNN
+- [ ] Check Keras NN
 - [ ] immagini 3_16, 3_338, e_334 chihuahua con schiuma GradCAM
 - [ ] Aggiungere matrice di confusione nella fase di analisi statistica (paper imbalanced data)

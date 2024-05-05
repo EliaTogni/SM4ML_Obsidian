@@ -194,7 +194,7 @@ immagine esempio
 Kernel filters are modifications that change the pixel values, resulting in the change of the arrangement of the pixels. Filters are a very popular technique in image processing to sharpen and blur images. These filters operate by moving a matrix of size $n \times n$ across an image, applying either a box blur filter, causing the image to become blurrier, or a high-contrast vertical or horizontal edge filter, resulting in sharper edges in the image\\cite{Shorten}.
 
 #### Unsharp masking sharpening
-This kernel filter involves exploiting a method commonly known as **unsharp masking sharpening**: a Gaussian blur is applied to the dataset and it is then subtracted from the original image, obtaining in this way an increment in terms of contrast for the smallest details. Sharpening images for Data Augmentation could result in encapsulating more details about objects of interest.
+This kernel filter involves exploiting a method commonly known as **unsharp masking sharpening** to increase the contrast along edges within the image: a Gaussian blur, that is, a filter that reduces detail and noise in an image by applying a Gaussian function to each pixel and its surrounding pixels, is applied to the original image and it is then subtracted from the original image itself, thereby accentuating the edges. Sharpening images could result in encapsulating more details about objects of interest.
 
 immagine esempio
 
@@ -210,7 +210,7 @@ immagine esempio
 ## Image Segmentation 
 Even if some filters simplify a picture giving almost only the main shape, in some cases this is not enough to exclude the features we know are completely irrelevant. The problem in the recognition of the principal content of the image is given by the fact that an image could contain a lot of different details that increase the difficulty of the task of classification, thus, I decided to also apply **segmentation** to the datasets. Segmentation is the process of partitioning an image or video into meaningful regions to identify and differentiate objects or regions of interest. The goal is to classify each pixel or region of the image as belonging to one of two classes: foreground or background. 
 
-A $K$-Means clustering algorithm is employed on each image, assigning every pixel to the centroid of its respective cluster. Using this approach, pixels with similar feature values are grouped into same clusters, which represent different segments in the image. As result, each image was segmented into a total of four clusters, resulting in simplified images where only the primary shapes and colors are retained. 
+A $K$-Means clustering algorithm is employed on each image, assigning every pixel to the centroid of its respective cluster. ==Using this approach, pixels with similar feature values are grouped into same clusters, which represent different segments in the image. As result, each image was segmented into a total of four clusters, resulting in simplified images where only the primary shapes and colors are retained.==
 
 immagine esempio segmentation
 
@@ -233,11 +233,10 @@ In the table below a brief summary of our generated datasets is provided.
 | RGB_Augmented_Segmented       | 3801                | 3390             | 7191         |
 | Greyscale_Augmented_Segmented | 3801                | 3390             | 7191         |
 
-
 ------------------------------------------------------------------------
 
 ## Image Normalization
-Each image in the datasets is normalized to pixel values between $0$ and $1$. Since the output of the NNs will be between $0$ and $1$ (because we are dealing with a classification task), normalizing the input will ensure that the input features (pixel values) will have similar scales. This can help accelerate the convergence of optimization algorithms during model training, as it reduces the likelihood of vanishing or exploding gradients and it is also useful to have comparable values in every layer of a neural network.
+Each image in the datasets is normalized to pixel values between $0$ and $1$, with $0$ being black and $1$ being white. This is done by dividing all pixels by the maximum pixel value ($255$ for RGB images). Since the output of the NNs will be between $0$ and $1$ (because we are dealing with a classification task), normalizing the input will ensure that the input features (pixel values) will have similar scales. This can help accelerate the convergence of optimization algorithms during model training, as it reduces the likelihood of vanishing or exploding gradients and it is also usypically eful to have comparable values in every layer of a neural network.
 
 ------------------------------------------------------------------------
 
