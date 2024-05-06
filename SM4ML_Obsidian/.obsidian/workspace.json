@@ -69,7 +69,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 200,
+    "collapsed": true
   },
   "right": {
     "id": "8604fe034c41210d",
@@ -148,7 +149,7 @@
   },
   "active": "ac345b77a49ce139",
   "lastOpenFiles": [
-    "Experiments.md",
+    "Theoretical Background.md",
     "Binary Classification with Machine Learning.md",
     "Chihuahua vs Muffin Dataset.md",
     "Results and Conclusion.md",

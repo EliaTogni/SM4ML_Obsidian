@@ -31,11 +31,11 @@ I declare that this material, which I now submit for assessment, is entirely my 
 			- [[Chihuahua vs Muffin Dataset#Training Set |Training Set]]
 			- [[Chihuahua vs Muffin Dataset#Validation Set |Validation Set]]
 			- [[Chihuahua vs Muffin Dataset#Testing Set |Testing Set]]
-- [[Experiments]]
-	- [[Experiments#Artificial Neural Networks |Artificial Neural Networks]]
-		- [[Experiments#An introduction to Artificial Neural Networks|An Introduction to Artificial Neural Networks]]
-		- [[Experiments#Multi Layer Neural Networks |Multi Layer Neural Networks]]
-	- Convolutional Neural Networks
+- [[Theoretical Background]]
+	- [[Theoretical Background#Artificial Neural Networks|Artificial Neural Networks]]
+		- [[Theoretical Background#An introduction to Artificial Neural Networks|An Introduction to Artificial Neural Networks]]
+		- [[Theoretical Background#Multi Layer Neural Networks|Multi Layer Neural Networks]]
+	- [[Theoretical Background#Convolutional Neural Networks |Convolutional Neural Networks]]
 		- An Introduction to Convolutional Neural Networks
 	- Chosen structures
 		- MLNN
@@ -134,27 +134,32 @@ I declare that this material, which I now submit for assessment, is entirely my 
 - [x] Sistemare segmentation ✅ 2024-05-03
 - [x] Cancellare repo segmentation ✅ 2024-05-03
 - [x] Creare dir examples 10 muffin 10 chihuahua codice ✅ 2024-05-05
-- [ ] If preprocessing data augmentation
-- [ ] Testare segmentation su examples
+- [x] If preprocessing data augmentation ✅ 2024-05-06
+- [x] Testare segmentation su examples ✅ 2024-05-05
 - [x] Check codice kidara Dataset Normalization ✅ 2024-05-05
-- [ ] Testare normalization su examples
+- [x] Testare normalization su examples ✅ 2024-05-06
+- [x] Closing operator documentarsi ✅ 2024-05-05
+- [x] Codice check empty test e remove ✅ 2024-05-05
+- [x] Correggere /flip_, /mirror_ etc in funzioni ✅ 2024-05-05
+- [x] Leggere ANN Max ✅ 2024-05-05
+- [x] Papers ANN ✅ 2024-05-06
+- [x] Scrivere ANN ✅ 2024-05-06
+- [ ] Controllo codice segmentazione
+- [ ] testing segmentazione su mini dataset
+- [ ] ragionare su normalizzazione
+- [ ] chiedere a Samuele x normalizzazione
 - [ ] Check codice kidara Dataset shuffling
 - [ ] Testare shuffling su examples
 - [ ] Sistemare codice kidara normalization
 - [ ] Sistemare codice kidata shuffling 
-- [x] Closing operator documentarsi ✅ 2024-05-05
-- [x] Codice check empty test e remove ✅ 2024-05-05
 - [ ] Rifrasare data augmentation
 - [ ] Omogenizzare commenti codice in inglese
 - [ ] Estrarre immagini x obsidian data augmentation
-- [x] Correggere /flip_, /mirror_ etc in funzioni ✅ 2024-05-05
 - [ ] Check codice a chatgpt
-- [ ] Leggere ANN Max
-- [ ] Papers ANN
-- [ ] Scrivere ANN
 - [ ] Leggere CNN Max
 - [ ] Leggere CNN Reeta
 - [ ] Scrivere CNN
+- [ ] Riordinare funzioni codice
 - [ ] Check Keras NN
 - [ ] immagini 3_16, 3_338, e_334 chihuahua con schiuma GradCAM
 - [ ] Aggiungere matrice di confusione nella fase di analisi statistica (paper imbalanced data)
