@@ -33,11 +33,9 @@ I declare that this material, which I now submit for assessment, is entirely my 
 			- [[Chihuahua vs Muffin Dataset#Testing Set |Testing Set]]
 - [[Theoretical Background]]
 	- [[Theoretical Background#Artificial Neural Networks|Artificial Neural Networks]]
-		- [[Theoretical Background#An introduction to Artificial Neural Networks|An Introduction to Artificial Neural Networks]]
 		- [[Theoretical Background#Multi Layer Neural Networks|Multi Layer Neural Networks]]
 	- [[Theoretical Background#Convolutional Neural Networks |Convolutional Neural Networks]]
-		- An Introduction to Convolutional Neural Networks
-	- Chosen structures
+- Models
 		- MLNN
 		- Inception V$3$
 		- TogNet
@@ -54,8 +52,8 @@ I declare that this material, which I now submit for assessment, is entirely my 
 - [x] Kumar bibtex check utilità ✅ 2024-04-22
 - [x] Dogs_folder elenco immagini da rimuovere ✅ 2024-04-22
 - [x] aggiungere imbalance ration dogs_folder ✅ 2024-04-22
-- [x] documentazione funzione di cropping (2) ✅ 2024-04-25
-- [x] documentazione funzione di padding e resizing (3) ✅ 2024-04-25
+- [x] documentazione funzione di cropping ✅ 2024-04-25
+- [x] documentazione funzione di padding e resizing ✅ 2024-04-25
 - [x] Rileggere paper resizing per scegliere size ✅ 2024-04-24
 - [x] Check se Rita usa interpolation per confrontare con lo zero padding (non lo fa) ✅ 2024-04-24
 - [x] Fare dictionary size delle immagini nei dataset ✅ 2024-04-23
@@ -144,22 +142,30 @@ I declare that this material, which I now submit for assessment, is entirely my 
 - [x] Leggere ANN Max ✅ 2024-05-05
 - [x] Papers ANN ✅ 2024-05-06
 - [x] Scrivere ANN ✅ 2024-05-06
-- [ ] Controllo codice segmentazione
-- [ ] testing segmentazione su mini dataset
-- [ ] ragionare su normalizzazione
-- [ ] chiedere a Samuele x normalizzazione
-- [ ] Check codice kidara Dataset shuffling
-- [ ] Testare shuffling su examples
-- [ ] Sistemare codice kidara normalization
-- [ ] Sistemare codice kidata shuffling 
-- [ ] Rifrasare data augmentation
-- [ ] Omogenizzare commenti codice in inglese
-- [ ] Estrarre immagini x obsidian data augmentation
-- [ ] Check codice a chatgpt
-- [ ] Leggere CNN Max
-- [ ] Leggere CNN Reeta
-- [ ] Scrivere CNN
+- [x] Controllo codice segmentazione ✅ 2024-05-07
+- [x] testing segmentazione su mini dataset ✅ 2024-05-07
+- [x] Leggere CNN Max ✅ 2024-05-07
+- [x] Leggere CNN Reeta ✅ 2024-05-07
+- [x] fixare removal test set vuoto ✅ 2024-05-07
+- [x] ragionare su normalizzazione ✅ 2024-05-07
+- [x] check input NN, se np.array normalizzare lì ✅ 2024-05-07
+- [x] printare immagine normalizzata example ✅ 2024-05-07
+- [x] Check codice kidara Dataset shuffling ✅ 2024-05-07
+- [x] Citare paper achanta su bibtex ✅ 2024-05-07
+- [x] Rifrasare data augmentation ✅ 2024-05-07
+- [ ] Finire di riordinare CNN
+- [ ] Inserire immagini ANN
+- [ ] Inserire immagini CNN simil Max + ultima kiddo
+- [ ] Immagini esempi data augmentation
 - [ ] Riordinare funzioni codice
+- [ ] leggere Max ANN modello
+- [ ] Codice Max ANN modello
+- [ ] Schematizzare varianti modello ANN su carta
+- [ ] Testare shuffling su examples 
+- [ ] Sistemare codice normalization
+- [ ] Sistemare codice shuffling 
+- [ ] Omogenizzare commenti codice in inglese
+- [ ] Check codice a chatgpt
 - [ ] Check Keras NN
 - [ ] immagini 3_16, 3_338, e_334 chihuahua con schiuma GradCAM
 - [ ] Aggiungere matrice di confusione nella fase di analisi statistica (paper imbalanced data)

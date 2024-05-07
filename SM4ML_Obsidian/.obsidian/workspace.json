@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "87c3477d46f2edb6",
+        "id": "5f4784e4105ca35a",
         "type": "tabs",
         "children": [
           {
-            "id": "ac345b77a49ce139",
+            "id": "6370d15baa2fa631",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -147,7 +147,7 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "ac345b77a49ce139",
+  "active": "6370d15baa2fa631",
   "lastOpenFiles": [
     "Theoretical Background.md",
     "Binary Classification with Machine Learning.md",

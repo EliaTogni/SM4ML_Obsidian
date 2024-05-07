@@ -133,8 +133,7 @@ It is possible to distinguish different techniques for augmenting data:
 5) **random erasing**: this technique was specifically designed to prevent overfitting by altering the input space and, consequently, to combat image recognition challenges due to occlusion. By removing certain input patches, the model is forced to find other descriptive characteristics;
 6) **mixing images**: blending and mixing multiple images by averaging their pixel values.
 
-For this purpose, new images were created by applying some augmentations over a randomly extracted set of images ($25\%$ of the dataset). ==selezioneresti circa 647, arrotondato a 640 immagini dalla prima classe e circa 791, arrotondato a 800 immagini dalla seconda classe per rendere le dimensioni dei due dataset più vicine possibili, con un totale di circa 1440 immagini.==
-
+For this purpose, new images were created by applying some augmentations over a randomly extracted set of images ($25\%$ of the dataset). I randomly extracted 640 images from the first class and approximately 800 images from the second class, in order to make the sizes of the two datasets closer. The total number of added images will be $1440$, approximately 25% of the dataset.
 
 The chosen augmentations are described in the following sections.
 
@@ -210,7 +209,7 @@ immagine esempio
 ## Image Segmentation 
 Even if some filters simplify a picture giving almost only the main shape, in some cases this is not enough to exclude the features we know are completely irrelevant. The problem in the recognition of the principal content of the image is given by the fact that an image could contain a lot of different details that increase the difficulty of the task of classification, thus, I decided to also apply **segmentation** to the datasets. Segmentation is the process of partitioning an image or video into meaningful regions to identify and differentiate objects or regions of interest. The goal is to classify each pixel or region of the image as belonging to one of two classes: foreground or background. 
 
-A $K$-Means clustering algorithm is employed on each image, assigning every pixel to the centroid of its respective cluster. ==Using this approach, pixels with similar feature values are grouped into same clusters, which represent different segments in the image. As result, each image was segmented into a total of four clusters, resulting in simplified images where only the primary shapes and colors are retained.==
+The **Simple Linear Iterative Clustering** algorithm is employed on each image, assigning every pixel to the centroid of its respective cluster, called **superpixel**. By combining pixels in the image plane based on their mean color and spatial position, the technique clusters pixels in a five-dimensional color and picture plane space to create small, nearly uniform superpixels\\cite{Achanta}.
 
 immagine esempio segmentation
 
