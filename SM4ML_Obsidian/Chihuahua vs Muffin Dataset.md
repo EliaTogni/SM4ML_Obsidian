@@ -11,7 +11,7 @@ After a preliminary analysis, it seemed evident that the dataset was composed of
 
 # Methodology
 
-![[Images/Preprocessing Pipeline.png]]
+![[PreprocessingPipeline.png]]
 
 ------------------------------------------------------------------------
 
@@ -112,7 +112,7 @@ One of the defining characteristics of Neural Networks is that they receive inpu
 
 Cropping could cause the missing of features or patterns that appear in the peripheral areas of the image. Scaling could deforme the features or patterns across the image. However, since deforming patterns is still preferable than losing them, scaling results to be the reasonable choice to resize larger images\\cite{Hashemi}. Therefore, I decided to utilize zero-padding because it has two advantages in comparison with scaling: it does not carry the risk of deforming the patterns in the image, while scaling does, and it speeds up the calculations in comparison with scaling, resulting in better computational efficiency. The reason of this improved efficiency is that neighboring zero input units (that is, pixels) will not activate their corresponding convolutional unit in the next layer\\cite{Hashemi}.
 
-A choice of great importance in terms of model performance is the fixed size. A size that is too large will result in high accuracy but extensive memory usage and a larger neural network. Thus, increasing both the space and time complexity. On the other hand, a size that is too small will result in a more manageable but less accurate network. It is obvious now that choosing this fixed size for images is a matter of tradeoff between computational efficiency and accuracy. The selected size for the images was $256 \times 256$.
+A choice of great importance in terms of model performance is the fixed size. A size that is too large will result in high accuracy but extensive memory usage and a larger neural network. Thus, increasing both the space and time complexity. On the other hand, a size that is too small will result in a more manageable but less accurate network. It is obvious now that choosing this fixed size for images is a matter of tradeoff between computational efficiency and accuracy. The selected size for the images was $128 \times 128$.
 
 ------------------------------------------------------------------------
 
@@ -143,21 +143,15 @@ This family of transformations takes the image and changes it, keeping the pixel
 #### Flipping
 This geometric transformation consists in flipping the horizonal axis.
 
-immagine esempio
-
 ------------------------------------------------------------------------
 
 #### Mirroring
 This geometric transformation consists in flipping the vertical axis.
 
-immagine esempio
-
 ------------------------------------------------------------------------
 
 #### Rotation
 Rotation augmentations are done by rotating the image right or left on an axis of a random degree.
-
-immagine esempio
 
 ------------------------------------------------------------------------
 
@@ -171,21 +165,15 @@ In effect, color space transformations will eliminate color biases present in th
 #### Brightness
 This color space transformation consists in the decreasing or increasing of the pixel values by a constant value. For example, when decreasing the pixel values of an image to simulate a darker environment, it may become impossible to see the objects in the image.
 
-immagine esempio
-
 ------------------------------------------------------------------------
 
 #### Contrast
 This color space transformation involves modifying the distribution of pixel intensities within an image to increase or decrease the difference between light and dark areas.
 
-immagine esempio
-
 ------------------------------------------------------------------------
 
 #### Saturation
 This color space transformation involves adjusting the intensity or purity of colors within an image while keeping the brightness and contrast levels constant.
-
-immagine esempio
 
 ------------------------------------------------------------------------
 
@@ -195,14 +183,10 @@ Kernel filters are modifications that change the pixel values, resulting in the 
 #### Unsharp masking sharpening
 This kernel filter involves exploiting a method commonly known as **unsharp masking sharpening** to increase the contrast along edges within the image: a Gaussian blur, that is, a filter that reduces detail and noise in an image by applying a Gaussian function to each pixel and its surrounding pixels, is applied to the original image and it is then subtracted from the original image itself, thereby accentuating the edges. Sharpening images could result in encapsulating more details about objects of interest.
 
-immagine esempio
-
 ------------------------------------------------------------------------
 
 #### Blurring
-This kernel filter involves, as the name suggests, blurring the image and reducing noise, resulting in a smoothed version of the image. Intuitively, blurring images for Data Augmentation could lead to higher resistance to motion blur during testing. The blurring is obtained through a **box blur**, that is, by setting the value of each pixel to the average of the pixels in the radius of 3.
-
-immagine esempio
+This kernel filter involves, as the name suggests, blurring the image and reducing noise, resulting in a smoothed version of the image. Intuitively, blurring images for Data Augmentation could lead to higher resistance to motion blur during testing. The blurring is obtained through a **box blur**, that is, by setting the value of each pixel to the average of the pixels in the radius of $3$.
 
 ------------------------------------------------------------------------
 
@@ -235,23 +219,12 @@ In the table below a brief summary of our generated datasets is provided.
 ------------------------------------------------------------------------
 
 ## Image Normalization
-Each image in the datasets is normalized to pixel values between $0$ and $1$, with $0$ being black and $1$ being white. This is done by dividing all pixels by the maximum pixel value ($255$ for RGB images). Since the output of the NNs will be between $0$ and $1$ (because we are dealing with a classification task), normalizing the input will ensure that the input features (pixel values) will have similar scales. This can help accelerate the convergence of optimization algorithms during model training, as it reduces the likelihood of vanishing or exploding gradients and it is also usypically eful to have comparable values in every layer of a neural network.
+Each image in the datasets is normalized to pixel values between $0$ and $1$, with $0$ being black and $1$ being white. This is done by dividing all pixels by the maximum pixel value. Since the output of the NNs will be between $0$ and $1$ (because we are dealing with a classification task), normalizing the input will ensure that the input features (pixel values) will have similar scales. This can help accelerate the convergence of optimization algorithms during model training, as it reduces the likelihood of vanishing or exploding gradients and it is also usypically eful to have comparable values in every layer of a neural network.
 
 ------------------------------------------------------------------------
 
 ## Dataset Shuffling
 Before splitting, a shuffle operation is executed to eliminate potential patterns or biases in the data collection process. It is important to note that shuffling the dataset will not address issues if the data is not representative of the entire population. However, if there is a systematic pattern in how the data was collected or ordered (e.g., all images of one class followed by another), shuffling will disrupt this inherent pattern, granting a more randomized distribution of the data. The shuffling will also ensure that each batch of training data represents a diverse mix of images from different categories or classes.
-
-------------------------------------------------------------------------
-
-## Dataset Splitting
-Tabella con i numeri
-
-numero di chihuahua e numero di muffin training
-
-numero di chihuahua e numero di muffin validation
-
-numero di chihuahua e numero di muffin test
 
 ------------------------------------------------------------------------
 

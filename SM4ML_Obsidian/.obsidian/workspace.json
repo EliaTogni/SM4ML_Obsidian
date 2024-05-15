@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Binary Classification with Machine Learning.md",
+                "file": "Models.md",
                 "mode": "source",
                 "source": false
               }
@@ -86,7 +86,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Binary Classification with Machine Learning.md",
+                "file": "Models.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -103,7 +103,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Binary Classification with Machine Learning.md",
+                "file": "Models.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -126,7 +126,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Binary Classification with Machine Learning.md"
+                "file": "Models.md"
               }
             }
           }
@@ -149,25 +149,28 @@
   },
   "active": "6370d15baa2fa631",
   "lastOpenFiles": [
-    "Theoretical Background.md",
     "Binary Classification with Machine Learning.md",
-    "Chihuahua vs Muffin Dataset.md",
-    "Results and Conclusion.md",
+    "Models.md",
+    "Theoretical Background.md",
     "Statistical Analysis.md",
-    "Environment and used tools.md",
     "Introduction.md",
+    "Chihuahua vs Muffin Dataset.md",
+    "Hyperparameters Tuning.md",
+    "Results and Conclusion.md",
+    "ripe.md",
+    "Images/ConvolutionalNeuralNetworkStructure.png",
+    "Images/PreprocessingPipeline.png",
+    "Images/ConvolutionalKernel.png",
+    "Images/FeedForwardNeuralNetwork.png",
+    "Images/NeuralNetworkNeuron.jpeg",
+    "Environment and used tools.md",
     "Images/img_2_779.jpg",
     "Images/img_2_986.jpg",
     "Images/img_4_756.jpg",
     "Images/img_4_980.jpg",
     "Images/HospitalizedWoman.jpg",
-    "Images/ChihuahuaMuffin.jpg",
-    "Images/ChihuahuaLog.jpg",
-    "Images/BothChihuahuaMuffin.jpg",
     "Assets",
-    "img_0_1167.jpg",
     "Images",
-    "Images/Preprocessing Pipeline.png",
     "Methodology.md",
     "Images Removal.md",
     "Dataset Preprocessing.md",

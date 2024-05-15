@@ -27,18 +27,15 @@ I declare that this material, which I now submit for assessment, is entirely my 
 		- [[Chihuahua vs Muffin Dataset#Data Augmentation |Data Augmentation]]
 		- [[Chihuahua vs Muffin Dataset#Image Normalization |Image Normalization]]
 		- [[Chihuahua vs Muffin Dataset#Dataset Shuffling |Dataset Shuffling]]
-		- [[Chihuahua vs Muffin Dataset#Dataset Splitting |Dataset Splitting]]
-			- [[Chihuahua vs Muffin Dataset#Training Set |Training Set]]
-			- [[Chihuahua vs Muffin Dataset#Validation Set |Validation Set]]
-			- [[Chihuahua vs Muffin Dataset#Testing Set |Testing Set]]
 - [[Theoretical Background]]
 	- [[Theoretical Background#Artificial Neural Networks|Artificial Neural Networks]]
 		- [[Theoretical Background#Multi Layer Neural Networks|Multi Layer Neural Networks]]
 	- [[Theoretical Background#Convolutional Neural Networks |Convolutional Neural Networks]]
-- Models
-		- MLNN
+- [[Models]]
+		- [[Models#MLNN |MLNN]]
 		- Inception V$3$
 		- TogNet
+- [[Hyperparameters Tuning]]
 - [[Statistical Analysis]]
 	- Grad-CAM
 - [[Results and Conclusion]]
@@ -153,19 +150,33 @@ I declare that this material, which I now submit for assessment, is entirely my 
 - [x] Check codice kidara Dataset shuffling ✅ 2024-05-07
 - [x] Citare paper achanta su bibtex ✅ 2024-05-07
 - [x] Rifrasare data augmentation ✅ 2024-05-07
-- [ ] Finire di riordinare CNN
-- [ ] Inserire immagini ANN
-- [ ] Inserire immagini CNN simil Max + ultima kiddo
-- [ ] Immagini esempi data augmentation
-- [ ] Riordinare funzioni codice
-- [ ] leggere Max ANN modello
-- [ ] Codice Max ANN modello
-- [ ] Schematizzare varianti modello ANN su carta
-- [ ] Testare shuffling su examples 
-- [ ] Sistemare codice normalization
-- [ ] Sistemare codice shuffling 
-- [ ] Omogenizzare commenti codice in inglese
+- [x] Finire di riordinare CNN ✅ 2024-05-08
+- [x] Inserire immagini ANN ✅ 2024-05-08
+- [x] Inserire immagini CNN simil Max + ultima kiddo ✅ 2024-05-08
+- [x] Immagini esempi data augmentation ✅ 2024-05-08
+- [x] Riordinare funzioni codice ✅ 2024-05-08
+- [x] Omogenizzare commenti codice in inglese ✅ 2024-05-08
+- [x] leggere Max ANN modello ✅ 2024-05-08
+- [x] Refactoring definizioni functions ✅ 2024-05-08
+- [x] Codice Max ANN modello ✅ 2024-05-08
+- [x] Check Keras NN ✅ 2024-05-08
+- [x] Risolvere problema import librerie ✅ 2024-05-13
+- [x] Load dataset function ✅ 2024-05-13
+- [x] Check shuffling data nel modello ✅ 2024-05-13
+- [x] Giustificare ADAM ✅ 2024-05-14
+- [x] Scelta metriche ANN ✅ 2024-05-14
+- [x] test con ANN Max ✅ 2024-05-14
+- [x] Chiedere Samuele x ANN ✅ 2024-05-14
+- [x] Check centering immagini ✅ 2024-05-14
+- [x] Strutturare outline training/kfold ✅ 2024-05-15
+- [ ] Aggiungere immagine struttura ANN obsidian
+- [x] Testare kfold ✅ 2024-05-15
+- [ ] Printare grafici ANN
+- [ ] InceptionV3 leggere struttura
+- [ ] Scegliere prima CNN
+- [ ] Schematizzare varianti modello CNN su carta
 - [ ] Check codice a chatgpt
-- [ ] Check Keras NN
 - [ ] immagini 3_16, 3_338, e_334 chihuahua con schiuma GradCAM
 - [ ] Aggiungere matrice di confusione nella fase di analisi statistica (paper imbalanced data)
+- [ ] Scrivere overview
+- [ ] Scrivere environment
