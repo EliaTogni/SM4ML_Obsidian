@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Models.md",
+                "file": "Experiments.md",
                 "mode": "source",
                 "source": false
               }
@@ -86,7 +86,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Models.md",
+                "file": "Experiments.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -103,7 +103,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Models.md",
+                "file": "Experiments.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -126,7 +126,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Models.md"
+                "file": "Experiments.md"
               }
             }
           }
@@ -149,21 +149,21 @@
   },
   "active": "6370d15baa2fa631",
   "lastOpenFiles": [
-    "Binary Classification with Machine Learning.md",
     "Models.md",
-    "Theoretical Background.md",
+    "Experiments.md",
+    "Environment and used tools.md",
+    "Binary Classification with Machine Learning.md",
     "Statistical Analysis.md",
-    "Introduction.md",
     "Chihuahua vs Muffin Dataset.md",
-    "Hyperparameters Tuning.md",
     "Results and Conclusion.md",
+    "Theoretical Background.md",
+    "Introduction.md",
     "ripe.md",
     "Images/ConvolutionalNeuralNetworkStructure.png",
     "Images/PreprocessingPipeline.png",
     "Images/ConvolutionalKernel.png",
     "Images/FeedForwardNeuralNetwork.png",
     "Images/NeuralNetworkNeuron.jpeg",
-    "Environment and used tools.md",
     "Images/img_2_779.jpg",
     "Images/img_2_986.jpg",
     "Images/img_4_756.jpg",
