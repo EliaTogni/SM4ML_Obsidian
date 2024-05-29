@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "5f4784e4105ca35a",
+        "id": "3ed42f14aa807e76",
         "type": "tabs",
         "children": [
           {
-            "id": "6370d15baa2fa631",
+            "id": "9df8235077a80769",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -69,8 +69,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200,
-    "collapsed": true
+    "width": 200
   },
   "right": {
     "id": "8604fe034c41210d",
@@ -147,28 +146,29 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "6370d15baa2fa631",
+  "active": "9df8235077a80769",
   "lastOpenFiles": [
-    "Models.md",
-    "Experiments.md",
     "Environment and used tools.md",
-    "Binary Classification with Machine Learning.md",
-    "Statistical Analysis.md",
-    "Chihuahua vs Muffin Dataset.md",
-    "Results and Conclusion.md",
-    "Theoretical Background.md",
+    "Experiments.md",
     "Introduction.md",
-    "ripe.md",
+    "Models.md",
+    "Results and Discussion.md",
+    "Theoretical Background.md",
+    "Chihuahua vs Muffin Dataset.md",
+    "Binary Classification with Machine Learning.md",
+    "Conclusions.md",
+    "Images/CNNSummary.png",
+    "Images/MLNNSummary.png",
+    "Images/Metrics_128_256_512And512_256_128.png",
+    "Images/binary_accuracy per Epoch for Each Fold for MLNN 512_256_128.png",
+    "Images/Metrics128_128_128And256_128_64.png",
+    "Images/Metrics128_128And256_128.png",
+    "Images/Metrics128And256.png",
+    "Images/ZOLValZOLPerArchitecture2(15Epochs).png",
+    "Images/ChihuahuaVisualInspection.png",
     "Images/ConvolutionalNeuralNetworkStructure.png",
-    "Images/PreprocessingPipeline.png",
-    "Images/ConvolutionalKernel.png",
-    "Images/FeedForwardNeuralNetwork.png",
-    "Images/NeuralNetworkNeuron.jpeg",
-    "Images/img_2_779.jpg",
-    "Images/img_2_986.jpg",
-    "Images/img_4_756.jpg",
-    "Images/img_4_980.jpg",
-    "Images/HospitalizedWoman.jpg",
+    "Statistical Analysis.md",
+    "ripe.md",
     "Assets",
     "Images",
     "Methodology.md",

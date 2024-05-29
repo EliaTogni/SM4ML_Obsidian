@@ -20,10 +20,7 @@ I declare that this material, which I now submit for assessment, is entirely my 
 			- [[Chihuahua vs Muffin Dataset#Muffin dataset|Muffin Dataset]]
 		- [[Chihuahua vs Muffin Dataset#Unbalance Resolution |Unbalance Resolution]]
 		- [[Chihuahua vs Muffin Dataset#Image Conversion |Image Conversion]]
-			- [[Chihuahua vs Muffin Dataset#RGB |RGB]]
-			- [[Chihuahua vs Muffin Dataset#Greyscale |Greyscale]]
-		- [[Chihuahua vs Muffin Dataset#Image Cropping |Image Cropping]]
-		- [[Chihuahua vs Muffin Dataset#Image Resizing |Image Resizing]]
+		- [[Chihuahua vs Muffin Dataset#Image Cropping and Image Resizing |Image Cropping and Image Resizing]]
 		- [[Chihuahua vs Muffin Dataset#Data Augmentation |Data Augmentation]]
 		- [[Chihuahua vs Muffin Dataset#Image Normalization |Image Normalization]]
 		- [[Chihuahua vs Muffin Dataset#Dataset Shuffling |Dataset Shuffling]]
@@ -42,8 +39,9 @@ I declare that this material, which I now submit for assessment, is entirely my 
 		- [[Experiments#TogNet |TogNet]]
 	- [[Experiments#Hyperparameters Tuning |Hyperparameters Tuning]]
 	- [[Experiments#General Settings |General Settings]]
-- [[Results and Conclusion]]
-	- [[Results and Conclusion#Interesting Questions and Observations |Interesting Questions and Observations]]
+- [[Results and Discussion]]
+	- [[Results and Discussion#Interesting Questions and Observations|Interesting Questions and Observations]]
+- [[Conclusions]]
 
 # To Do List
 
@@ -173,13 +171,12 @@ I declare that this material, which I now submit for assessment, is entirely my 
 - [x] Chiedere Samuele x ANN ✅ 2024-05-14
 - [x] Check centering immagini ✅ 2024-05-14
 - [x] Strutturare outline training/kfold ✅ 2024-05-15
-- [ ] Aggiungere immagine struttura ANN obsidian
 - [x] Testare kfold ✅ 2024-05-15
-- [ ] Printare grafici ANN
-- [ ] InceptionV3 leggere struttura
-- [ ] Scegliere prima CNN
-- [ ] Schematizzare varianti modello CNN su carta
-- [ ] Check codice a chatgpt
+- [x] Aggiungere immagine struttura ANN obsidian ✅ 2024-05-25
+- [x] Check grafici Sam ✅ 2024-05-22
+- [x] Printare grafici ANN ✅ 2024-05-23
+- [x] Scegliere prima CNN ✅ 2024-05-27
+- [x] Immagine summary MLNN scelta ✅ 2024-05-25
 - [ ] immagini 3_16, 3_338, e_334 chihuahua con schiuma GradCAM
 - [ ] Aggiungere matrice di confusione nella fase di analisi statistica (paper imbalanced data)
 - [ ] Scrivere overview

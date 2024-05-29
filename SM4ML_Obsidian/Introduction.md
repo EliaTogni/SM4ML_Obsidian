@@ -17,4 +17,7 @@ Our objective is not only to assess the performance disparities between these tw
 ------------------------------------------------------------------------
 
 # Overview
+
+riassunto di tutto
+
 All the code is available on GitHub\footnote{\href{https://github.com/EliaTogni/Statistical-Methods-for-Machine-Learning-Project}{https://github.com/EliaTogni/Statistical-Methods-for-Machine-Learning-Project}}.

@@ -13,6 +13,8 @@ After a preliminary analysis, it seemed evident that the dataset was composed of
 
 ![[PreprocessingPipeline.png]]
 
+The preprocessing steps for the Chihuahua vs Muffin dataset involve several key processes to prepare the data for analysis. First, the dataset undergoes image removal, which includes the visual inspection for images that are not compliant with the given task. Next, unbalance resolution addresses any disparities in the number of images between the two categories. Image conversion ensures uniformity in image format, followed by cropping and resizing to standardize image dimensions. Data augmentation expands the dataset by applying three different type of  transformations to existing images. Image normalization adjusts pixel values in the range \[0, 1\] to simplify the training step. Finally, dataset shuffling randomizes the order of samples for unbiased training and testing. These preprocessing steps collectively enhance the quality and suitability of the dataset for the given machine learning task.
+
 ------------------------------------------------------------------------
 
 # Dataset Preprocessing
@@ -29,12 +31,7 @@ The reason for this subclassification will be made clear in the following paragr
 
 My first operation will be the removal of the latter subset from the folder, since it would certainly compromise the classification task. The removed images comprise muffins (wrongly labelled images), muffins and chihuahuas (images in which both classes appear together) or neither of them (totally unrelated images). Some examples (e.g., a hospitalized woman, a muffin, both chihuahuas and muffins and a wood plank) can be seen in the figure below.
 
-0_867 hospital![[HospitalizedWoman.jpg]]
-
-0_879 muffin![[ChihuahuaMuffin.jpg]]
-0_1167 both![[BothChihuahuaMuffin.jpg]]
-0_1073 log
-![[ChihuahuaLog.jpg]]
+![[ChihuahuaVisualInspection.png]]
 
 The folder after the removal contains now $3161$ images of different breeds of dogs, so only $38$ images were removed.
 
@@ -51,15 +48,7 @@ Again, I made some strong assumptions in the removal process: I considered the r
 
 Consequently, all the images representing chihuahuas (wrongly labelled images), muffins and chihuahuas (images in which both classes appear together) or neither of them (totally unrelated images) have been removed. Some examples (e.g., a plant of marijuana, an ill child, the ingredients necessary to make muffins but not a fully formed muffin yet and empty muffin stamps) can be seen in the figure below.
 
-4_756 ill child
-![[img_4_756.jpg]]
-4_980 marijuana
-![[img_4_980.jpg]]
-
-2_986 Ingredients
-![[img_2_986.jpg]]
-2_779 stamps
-![[img_2_779.jpg]]
+![[MuffinVisualInspection.png]]
 
 The folder after the removal contains now $2590$ images of muffins, so $128$ images were removed.
 
@@ -78,8 +67,6 @@ $$ \text{Imbalance Ratio } \rho = \frac{\text{Number of instances in Majority Cl
 
 If the Imbalance Ratio is close to $1$, the dataset is relatively balanced. If the imbalance Ratio is significantly greater than $1$, it indicates an unbalanced dataset, with the larger value representing the degree of imbalance.
 
-Classification of degree of imbalance in data \cite {Kumar}.
-
 | **Class Imbalance Degree** | **Proportion of Minority Class** |
 | -------------------------- | -------------------------------- |
 | Extreme                    | $<1\%$ of the dataset            |
@@ -90,21 +77,14 @@ Good results can be obtained, regardless of class disproportion, if both groups 
 
 ------------------------------------------------------------------------
 
-## Image Conversion
-Understanding whether color significantly influences class distinction offers insights into the model's learned features. Thus, the next preprocessing step involves converting the dataset into two distinct color schemes: RGB and Greyscale. This division aids in deciphering the CNN's decision-making process. In fact, determining the representation that yields the superior classification accuracy could provide insight about the visual cues the model relies on for predictions.
-
-Moreover, Greyscale images may exhibit greater resilience to lighting and color variations compared to RGB counterparts. Consequently, evaluating CNN performance on both RGB and Greyscale representations would allow for a direct comparison of color's significance in the classification task.
-
-As term of comparison, it was found a $\sim 3\%$ classification accuracy drop between Greyscale and RGB images\\cite{Shorten}.
+## Image Conversion to RGB
+Understanding whether color significantly influences class distinction offers insights into the model's learned features. The next preprocessing step involves converting the dataset into the RGB color scheme.
 
 ------------------------------------------------------------------------
 
-## Image Cropping
+## Image Cropping and Image Resizing
 A recurrent characteristic of the dataset was the presence of a large white border around several images. The white border surrounding an image contains no relevant information for the classification task, therefore I trimmed the borders to help the CNN focus its attention on the essential features within the image, reducing noise and potential distractions that could hinder classification accuracy. Removing this border was made to help the model focus on the discriminative features within the image, making it more robust to variations in background and irrelevant details.
 
-------------------------------------------------------------------------
-
-## Image Resizing
 One of the defining characteristics of Neural Networks is that they receive inputs of the same size: each neuron so all images need to be resized to a fixed dimension before inputting them to the CNN. It is possible to resize the images larger than the fixed size (in one dimension or both) down to the desired one using three possible approaches\\cite{Hashemi}:
 1) further cropping their border pixels;
 2) scaling the images down using interpolation;
@@ -197,29 +177,23 @@ The **Simple Linear Iterative Clustering** algorithm is employed on each image, 
 
 immagine esempio segmentation
 
-The result of the data segmentation and augmentation has been eight different datasets:
-- the original couple of datasets (==used in the hyper parameter tuning==);
+The result of the data segmentation and augmentation has been three different datasets:
+- the original couple of datasets (used in the hyper parameter tuning);
 - the augmented couple of datasets;
-- the segmented couple of datasets;
-- the augmented and segmented couple of datasets.
+- the segmented couple of datasets.
 
 In the table below a brief summary of our generated datasets is provided.
 
-| Dataset                       | Number of Chihuahua | Number of Muffin | Total images |
-| ----------------------------- | ------------------- | ---------------- | ------------ |
-| RGB                           | 3161                | 2590             | 5751         |
-| Greyscale                     | 3161                | 2590             | 5751         |
-| RGB_Augmented                 | 3801                | 3390             | 7191         |
-| Greyscale_Augmented           | 3801                | 3390             | 7191         |
-| RGB_Segmented                 | 3161                | 2590             | 5751         |
-| Greyscale_Segmented           | 3161                | 2590             | 5751         |
-| RGB_Augmented_Segmented       | 3801                | 3390             | 7191         |
-| Greyscale_Augmented_Segmented | 3801                | 3390             | 7191         |
+| Dataset             | Number of Chihuahua | Number of Muffin | Total images |
+| ------------------- | ------------------- | ---------------- | ------------ |
+| RGB                 | 3161                | 2590             | 5751         |
+| RGB_Augmented       | 3801                | 3390             | 7191         |
+| RGB_Segmented       | 3161                | 2590             | 5751         |
 
 ------------------------------------------------------------------------
 
 ## Image Normalization
-Each image in the datasets is normalized to pixel values between $0$ and $1$, with $0$ being black and $1$ being white. This is done by dividing all pixels by the maximum pixel value. Since the output of the NNs will be between $0$ and $1$ (because we are dealing with a classification task), normalizing the input will ensure that the input features (pixel values) will have similar scales. This can help accelerate the convergence of optimization algorithms during model training, as it reduces the likelihood of vanishing or exploding gradients and it is also usypically eful to have comparable values in every layer of a neural network.
+Each image in the datasets is normalized to pixel values between $0$ and $1$, with $0$ being black and $1$ being white. This is done by dividing all pixels by the maximum pixel value. Since the output of the NNs will be between $0$ and $1$ (because we are dealing with a classification task), normalizing the input will ensure that the input features (pixel values) will have similar scales. This can help accelerate the convergence of optimization algorithms during model training, as it reduces the likelihood of vanishing or exploding gradients and it is also useful to have comparable values in every layer of a neural network.
 
 ------------------------------------------------------------------------
 
